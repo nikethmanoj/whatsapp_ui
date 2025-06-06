@@ -1,34 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:whatsapp_ui/calls.dart';
+import 'package:whatsapp_ui/chats.dart';
+import 'package:whatsapp_ui/community.dart';
+import 'package:whatsapp_ui/updates.dart';
 
-class Whatsappui extends StatelessWidget {
+class Whatsappui extends StatefulWidget {
   const Whatsappui({super.key});
+
+  @override
+  State<Whatsappui> createState() => _WhatsappuiState();
+}
+
+class _WhatsappuiState extends State<Whatsappui> {
+  int index = 0;
+  List<Widget> pages =[Chats(),Updates(), Community(), Calls()];
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 15, 14, 15), 
-      appBar: AppBar(
-        title: Text('WhatsApp'), 
-        titleTextStyle: TextStyle(
-          fontSize: 28,
-          fontWeight: FontWeight.bold,
-          color: const Color.fromARGB(255, 251, 252, 251),
-        ),
-        backgroundColor: const Color.fromARGB(255, 12, 11, 12),
-        foregroundColor: const Color.fromARGB(255, 250, 249, 248),
-        actions: [Icon(Icons.qr_code),
-        Padding(padding: EdgeInsetsGeometry.only(right: 15)),
-        Icon(Icons.camera),
-        Padding(padding: EdgeInsetsGeometry.only(right: 20)),
-        Icon(Icons.more_vert),
-        Padding(padding: EdgeInsetsGeometry.only(right: 25)),
-        ],
-      ),
+      backgroundColor: const Color.fromARGB(255, 12, 0, 0),
+     
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: const Color.fromARGB(255, 14, 163, 4),
         child: Icon(Icons.message_outlined),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Colors.black,
+            icon: Icon(Icons.chat),
+            label: "Chats",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.update), label: "Updates"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: "Communities",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: "Calls"),
+        ],
+        selectedItemColor: const Color.fromARGB(255, 24, 184, 6),
+        currentIndex: index,
+        type: BottomNavigationBarType.shifting,
+        onTap: (tappedindex) {
+          setState(() {
+            index = tappedindex;
+          });
+        },
+      ),
+      body: pages[index],
     );
   }
 }
