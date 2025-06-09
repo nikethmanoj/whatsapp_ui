@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_ui/calls.dart';
+import 'package:whatsapp_ui/chatbot.dart';
 import 'package:whatsapp_ui/chats.dart';
 import 'package:whatsapp_ui/community.dart';
 import 'package:whatsapp_ui/updates.dart';
@@ -23,7 +24,12 @@ class _WhatsappuiState extends State<Whatsappui> {
       backgroundColor: const Color.fromARGB(255, 12, 0, 0),
      
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+           Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Chatbot()),
+              );
+        },
         backgroundColor: const Color.fromARGB(255, 14, 163, 4),
         child: Icon(Icons.message_outlined),
       ),

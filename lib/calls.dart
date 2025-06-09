@@ -8,7 +8,7 @@ class Calls extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(0, 17, 1, 1),
-       appBar: AppBar(
+      appBar: AppBar(
         title: Text(
           'Calls',
           style: GoogleFonts.roboto(
@@ -28,48 +28,79 @@ class Calls extends StatelessWidget {
           Padding(padding: EdgeInsetsGeometry.only(right: 25)),
         ],
       ),
-       body: ListView(
+      body: ListView(
         children: [
           ListTile(
-            leading: CircleAvatar(backgroundImage: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg"),),
-            title: Text("Johny Depp",
-            style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244))),
-            subtitle: Text("Hey, how are you?",
-            style: TextStyle(color: const Color.fromARGB(179, 174, 170, 170))),
-           trailing: Icon(Icons.call_made, 
-             color: const Color.fromARGB(255, 24, 184, 6),           
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg",
+              ),
+            ),
+            title: Text(
+              "Johny Depp",
+              style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244)),
+            ),
+            subtitle: Text(
+              "Hey, how are you?",
+              style: TextStyle(color: const Color.fromARGB(179, 174, 170, 170)),
+            ),
+            trailing: Icon(
+              Icons.call_made,
+              color: const Color.fromARGB(255, 24, 184, 6),
+            ),
           ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://b.fssta.com/uploads/application/soccer/headshots/711.vresize.350.350.medium.74.png",
+              ),
+            ),
+            title: Text(
+              "Lionel Messi",
+              style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244)),
+            ),
+            subtitle: Text(
+              "Hey, did you see the match?",
+              style: TextStyle(color: const Color.fromARGB(179, 174, 170, 170)),
+            ),
+            trailing: Icon(
+              Icons.call,
+              color: const Color.fromARGB(255, 24, 184, 6),
+            ),
           ),
-           ListTile(
-            leading: CircleAvatar(backgroundImage: NetworkImage("https://b.fssta.com/uploads/application/soccer/headshots/711.vresize.350.350.medium.74.png"),),
-            title: Text("Lionel Messi",
-            style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244))),
-            subtitle: Text("Hey, did you see the match?",
-            style: TextStyle(color: const Color.fromARGB(179, 174, 170, 170))),
-            trailing: Icon(Icons.call, 
-             color: const Color.fromARGB(255, 24, 184, 6),           
-          ),
-                      
-          ),
-           ListTile(
-            leading: CircleAvatar(backgroundImage: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/b/be/Cristiano_Ronaldo%2C_2023.jpg"),),
-            title: Text("Cristiano",
-            style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244))),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://upload.wikimedia.org/wikipedia/commons/b/be/Cristiano_Ronaldo%2C_2023.jpg",
+              ),
+            ),
+            title: Text(
+              "Cristiano",
+              style: TextStyle(color: const Color.fromARGB(255, 245, 244, 244)),
+            ),
             subtitle: Row(
               children: [
-                Icon(Icons.call_received, color: const Color.fromARGB(179, 174, 170, 170), size: 16),
+                Icon(
+                  Icons.call_received,
+                  color: const Color.fromARGB(179, 174, 170, 170),
+                  size: 16,
+                ),
                 SizedBox(width: 6),
                 Text(
                   "Yesterday, 9:22",
-                  style: TextStyle(color: const Color.fromARGB(179, 174, 170, 170)),
+                  style: TextStyle(
+                    color: const Color.fromARGB(179, 174, 170, 170),
+                  ),
                 ),
               ],
             ),
-            trailing: Icon(Icons.call, 
-             color: const Color.fromARGB(255, 24, 184, 6),           
+            trailing: Icon(
+              Icons.call,
+              color: const Color.fromARGB(255, 24, 184, 6),
+            ),
           ),
-        ), ],
-       ),
+        ],
+      ),
     );
   }
 }
